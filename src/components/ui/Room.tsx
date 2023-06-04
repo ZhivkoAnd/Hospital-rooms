@@ -12,8 +12,6 @@ const Room = ({ id, patients }: any) => {
     });
   };
 
-  console.log(info);
-
   return (
     <div className="room__container">
       <div className="lol">
