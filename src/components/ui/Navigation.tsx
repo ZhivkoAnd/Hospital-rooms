@@ -19,43 +19,8 @@ import AuthenticationMenu from "./AuthenticationMenu";
 const pages = [
   {
     id: 1,
-    label: "Admin",
+    label: "Rooms",
     link: "/",
-  },
-  {
-    id: 2,
-    label: "Shop",
-    link: "/shop",
-  },
-  {
-    id: 3,
-    label: "Vacations",
-    link: "/vacations",
-  },
-  {
-    id: 4,
-    label: "Trends",
-    link: "/trends",
-  },
-  {
-    id: 5,
-    label: "Random City",
-    link: "/random-city",
-  },
-  {
-    id: 6,
-    label: "Testing",
-    link: "/testing",
-  },
-  {
-    id: 7,
-    label: "Slider",
-    link: "/slider",
-  },
-  {
-    id: 8,
-    label: "Google",
-    link: "/google",
   },
 ];
 

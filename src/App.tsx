@@ -12,20 +12,21 @@ import "../styles/ErrorUI.scss";
 import "../styles/Footer.scss";
 
 import Layout from "./components/ui/Layout";
-import Admin from "./components/Admin";
+// import Admin from "./components/Admin";
 
 // Lazy loading - the components will load only when the user visits them
 
-const Shop = lazy(() => import("./components/Shop"));
-const Vacations = lazy(() => import("./components/Vacations"));
-const Login = lazy(() => import("./components/ui/LoginPanel"));
-const Register = lazy(() => import("./components/ui/RegisterPanel"));
-const UpdateProduct = lazy(() => import("./components/UpdateProduct"));
-const TrendsCurrency = lazy(() => import("./components/TrendsCurrency"));
-const RandomCity = lazy(() => import("./components/RandomCity"));
-const Testing = lazy(() => import("./components/Testing"));
-const Slider = lazy(() => import("./components/Slider"));
-const Google = lazy(() => import("./components/Google"));
+// const Shop = lazy(() => import("./components/Shop"));
+// const Vacations = lazy(() => import("./components/Vacations"));
+// const Login = lazy(() => import("./components/ui/LoginPanel"));
+// const Register = lazy(() => import("./components/ui/RegisterPanel"));
+// const UpdateProduct = lazy(() => import("./components/UpdateProduct"));
+// const TrendsCurrency = lazy(() => import("./components/TrendsCurrency"));
+// const RandomCity = lazy(() => import("./components/RandomCity"));
+// const Testing = lazy(() => import("./components/Testing"));
+// const Slider = lazy(() => import("./components/Slider"));
+// const Google = lazy(() => import("./components/Google"));
+const RoomGrid = lazy(() => import("./components/RoomGrid"));
 
 function App() {
   const [colorMode, setColorMode] = useState("dark");
@@ -44,8 +45,8 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Layout lightMode={lightMode} darkMode={darkMode}>
             <Routes>
-              <Route path="/" element={<Admin />} />
-              <Route path="/shop" element={<Shop />} />
+              <Route path="/" element={<RoomGrid />} />
+              {/* <Route path="/shop" element={<Shop />} />
               <Route path="/update-product/:id" element={<UpdateProduct />} />
               <Route path="/vacations" element={<Vacations />} />
               <Route path="/trends" element={<TrendsCurrency />} />
@@ -54,7 +55,7 @@ function App() {
               <Route path="/testing" element={<Testing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/google" element={<Google />} />
+              <Route path="/google" element={<Google />} /> */}
             </Routes>
           </Layout>
         </Suspense>
