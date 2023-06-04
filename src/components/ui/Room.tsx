@@ -2,7 +2,7 @@ import { useState } from "react";
 // import bed from "../../assets/bed.svg";
 
 const Room = ({ id, patients }: any) => {
-  const [info, setInfo] = useState(Array(patients.length).fill(false));
+  const [info, setInfo] = useState(Array(patients?.length).fill(false));
 
   const showInfo = (index: any) => {
     setInfo((prevInfo) => {
@@ -19,7 +19,7 @@ const Room = ({ id, patients }: any) => {
         <div>Edit room</div>
       </div>
       <div className="room">
-        {patients.map((e: any, index: any) => (
+        {patients?.map((e: any, index: any) => (
           <div className="room-info" key={index}>
             <div>
               <img className="room-bed" onClick={() => showInfo(index)} />
