@@ -1,0 +1,61 @@
+.trends {
+  text-align: center;
+  margin: 10px;
+
+  &__button {
+    margin: 2px;
+    background-color: #bfbfbf;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:focus {
+      background-color: #b30000;
+      color: white;
+      border: none;
+    }
+  }
+  &__list {
+    margin-bottom: 2rem;
+  }
+
+  &__selected-currency {
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &__values {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__values-min {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    max-width: 150px;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  &__values-max {
+    background-color: #006622;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    max-width: 150px;
+    padding: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+  }
+}
