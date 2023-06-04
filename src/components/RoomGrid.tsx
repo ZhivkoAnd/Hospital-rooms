@@ -51,7 +51,7 @@ const RoomGrid = () => {
             <div key={patient.id}>{patient.name}</div>
           ) : (
             <div key={patient.id}>
-              {patient?.patients?.map((e: any) => e.name)}
+              <Room {...patient} />
             </div>
           )
         )}
