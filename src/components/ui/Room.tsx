@@ -15,7 +15,7 @@ const Room = ({ id, patients }: any) => {
   console.log(info);
 
   return (
-    <>
+    <div className="room__container">
       <div className="lol">
         <div>Room Number:{id}</div>
         <div>Edit room</div>
@@ -33,7 +33,7 @@ const Room = ({ id, patients }: any) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
