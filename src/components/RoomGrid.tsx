@@ -16,7 +16,7 @@ const RoomGrid = () => {
     refetchOnWindowFocus: false,
   });
 
-  const [rooms, setRooms] = useState<any>(data);
+  const [rooms, setRooms] = useState(data);
 
   console.log(rooms);
 
@@ -28,7 +28,6 @@ const RoomGrid = () => {
       )
     )
     .flat();
-  console.log(inputData);
 
   useEffect(() => {
     if (inputData && inputData.length) {
@@ -36,9 +35,7 @@ const RoomGrid = () => {
     } else {
       setRooms(data);
     }
-  }, [inputQuery]);
-
-  console.log(inputData);
+  }, [inputQuery, data]);
 
   if (isLoading) {
     return <LoadingSpinners magnifying_glass />;
