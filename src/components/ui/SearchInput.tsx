@@ -6,7 +6,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 
 interface Props {
   inputQuery: string | undefined;
-  setInputQuery: any
+  setInputQuery: any;
 }
 
 const InputWithIcon = ({ inputQuery, setInputQuery }: Props) => {
@@ -20,7 +20,7 @@ const InputWithIcon = ({ inputQuery, setInputQuery }: Props) => {
             <AccountCircle sx={{ color: "white" }} />
           </InputAdornment>
         }
-        placeholder="Search vacation…"
+        placeholder="Search patient…"
         inputProps={{ "aria-label": "search" }}
         value={inputQuery}
         onChange={(e) => setInputQuery(e.target.value)}

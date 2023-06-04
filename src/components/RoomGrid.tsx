@@ -18,9 +18,6 @@ const RoomGrid = () => {
 
   const [rooms, setRooms] = useState(data);
 
-  console.log(rooms);
-
-  // console.log(data?.flatMap((e: any) => e.patients));
   const inputData = data
     ?.map((e: any) =>
       e.patients.filter((patient: any) =>
@@ -47,10 +44,9 @@ const RoomGrid = () => {
   return (
     <>
       <ActionBar inputQuery={inputQuery} setInputQuery={setInputQuery} />
-
       <div className="rooms">
         {rooms?.map((patient: any) => (
-          <div>{patient.name}</div>
+          <div key={patient.id}>{patient.name}</div>
         ))}
       </div>
     </>
