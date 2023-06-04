@@ -27,7 +27,7 @@ const RoomGrid = () => {
     .flat();
 
   useEffect(() => {
-    if (inputData && inputData.length) {
+    if (inputData && inputData.length && inputQuery) {
       setRooms(inputData);
     } else {
       setRooms(data);
@@ -45,9 +45,16 @@ const RoomGrid = () => {
     <>
       <ActionBar inputQuery={inputQuery} setInputQuery={setInputQuery} />
       <div className="rooms">
-        {rooms?.map((patient: any) => (
-          <div key={patient.id}>{patient.name}</div>
-        ))}
+        {/* If there as something written in the input, show only the names, otherwise show the rooms */}
+        {rooms?.map((patient: any) =>
+          inputQuery ? (
+            <div key={patient.id}>{patient.name}</div>
+          ) : (
+            <div key={patient.id}>
+              {patient?.patients?.map((e: any) => e.name)}
+            </div>
+          )
+        )}
       </div>
     </>
   );
