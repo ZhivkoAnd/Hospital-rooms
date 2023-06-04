@@ -10,6 +10,7 @@ import "../styles/RandomCity.scss";
 import "../styles/ActionBar.scss";
 import "../styles/ErrorUI.scss";
 import "../styles/Footer.scss";
+import "../styles/Room.scss";
 
 import Layout from "./components/ui/Layout";
 // import Admin from "./components/Admin";
