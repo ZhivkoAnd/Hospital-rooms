@@ -10,9 +10,9 @@ const Room = ({ id, patients }: any) => {
       </div>
       <div
         className={`room ${
-          patients.length === 1
+          patients?.length === 1
             ? "room__variant-one"
-            : patients.length === 2
+            : patients?.length === 2
             ? "room__variant-two"
             : "room__variant-three"
         }`}
