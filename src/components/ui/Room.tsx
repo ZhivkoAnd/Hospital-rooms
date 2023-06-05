@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import bed from "../../assets/bed.svg";
+import bed from "../../assets/bed.svg";
 
 const Room = ({ id, patients }: any) => {
   const [info, setInfo] = useState(Array(patients?.length).fill(false));
@@ -22,7 +22,11 @@ const Room = ({ id, patients }: any) => {
         {patients?.map((e: any, index: any) => (
           <div className="room-info" key={index}>
             <div>
-              <img className="room-bed" onClick={() => showInfo(index)} />
+              <img
+                className="room__bed-svg"
+                src={bed}
+                onClick={() => showInfo(index)}
+              />
             </div>
             <div>{e.name}</div>
             {info[index] && (
