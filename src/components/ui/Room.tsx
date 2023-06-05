@@ -10,7 +10,7 @@ const Room = ({ id, patients }: any) => {
       </div>
       <div className="room">
         {patients?.map((patient: any, index: any) => (
-          <div className="room-info" key={index}>
+          <div className="room__info" key={index}>
             <div>
               <img className="room__bed-svg" src={bed} />
             </div>
