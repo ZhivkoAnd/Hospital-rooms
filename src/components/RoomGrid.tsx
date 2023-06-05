@@ -48,7 +48,6 @@ const RoomGrid = () => {
     return <ErrorUI />;
   }
 
-  console.log(inputData);
   return (
     <>
       <ActionBar inputQuery={inputQuery} setInputQuery={setInputQuery} />
