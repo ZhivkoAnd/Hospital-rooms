@@ -1,5 +1,6 @@
 import { useState } from "react";
 import bed from "../../assets/bed.svg";
+import PatientInfoModal from "./PatientInfoModal";
 
 const Room = ({ id, patients }: any) => {
   const [info, setInfo] = useState(Array(patients?.length).fill(false));
@@ -34,6 +35,7 @@ const Room = ({ id, patients }: any) => {
             )}
           </div>
         ))}
+        <PatientInfoModal />
       </div>
     </div>
   );
