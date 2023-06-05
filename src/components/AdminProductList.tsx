@@ -39,11 +39,7 @@ interface AdminProductList {
   isLoadingDeletedElement: boolean;
 }
 
-const AdminProductList = ({
-  data,
-  remove,
-  isLoadingDeletedElement,
-}: AdminProductList) => {
+const AdminProductList = ({ data }: any) => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -78,29 +74,14 @@ const AdminProductList = ({
                   startIcon={<UpgradeIcon />}
                   component={Link}
                   to={`/update-product/${row.id}`}
-                  disabled={isLoadingDeletedElement ? true : false}
-                >
-                  {isLoadingDeletedElement ? (
-                    <LoadingSpinners three_dots />
-                  ) : (
-                    "Update"
-                  )}
-                </Button>
+                ></Button>
               </StyledTableCell>
               <StyledTableCell align="center">
                 <Button
                   variant="contained"
                   color="error"
                   startIcon={<DeleteIcon />}
-                  onClick={() => remove(row.id)}
-                  disabled={isLoadingDeletedElement ? true : false}
-                >
-                  {isLoadingDeletedElement ? (
-                    <LoadingSpinners three_dots />
-                  ) : (
-                    "Delete"
-                  )}
-                </Button>
+                ></Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}

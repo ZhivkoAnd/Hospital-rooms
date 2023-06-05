@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import LoadingSpinners from "./ui/LoadingSpinners";
 import ErrorUI from "./ui/ErrorUI";
 import ActionBar from "./ui/ActionBar";
+import AdminProductList from "./AdminProductList";
 
 const RoomGrid = () => {
   const [inputQuery, setInputQuery] = useState("");
@@ -48,27 +49,30 @@ const RoomGrid = () => {
     return <ErrorUI />;
   }
 
+  console.log(rooms);
+
   return (
     <>
       <ActionBar inputQuery={inputQuery} setInputQuery={setInputQuery} />
       <div className="rooms">
         {/* If there as something written in the input, show only the names, otherwise show the rooms */}
-        {rooms?.map((patient: any) =>
-          inputQuery ? (
-            <div key={patient.id}>{patient.name}</div>
-          ) : (
+
+        {inputQuery && /^[a-zA-Z]+$/.test(inputQuery) && (
+          <AdminProductList data={rooms} />
+        )}
+        {inputQuery &&
+          /^\d+$/.test(inputQuery) &&
+          inputData.map((patient: any) => (
             <div key={patient.id}>
               <Room {...patient} />
             </div>
-          )
-        )}
-        {/^\d+$/.test(inputQuery)
-          ? inputData.map((patient: any) => (
-              <div key={patient.id}>
-                <Room {...patient} />
-              </div>
-            ))
-          : ""}
+          ))}
+        {!inputQuery &&
+          rooms?.map((patient: any) => (
+            <div key={patient.id}>
+              <Room {...patient} />
+            </div>
+          ))}
       </div>
     </>
   );
