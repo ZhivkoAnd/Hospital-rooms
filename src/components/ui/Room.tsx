@@ -32,9 +32,7 @@ const Room = ({ id, patients }: any) => {
             <div>{e.name}</div>
             {info[index] && (
               <div>
-                {/* {e.diseases.map((disease: any) => disease)}
-                {console.log(e)} */}
-                <PatientInfoModal />
+                <PatientInfoModal {...e} />
               </div>
             )}
           </div>
