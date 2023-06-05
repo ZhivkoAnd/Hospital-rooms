@@ -1,40 +1,23 @@
-import { useState } from "react";
 import bed from "../../assets/bed.svg";
 import PatientInfoModal from "./PatientInfoModal";
 
 const Room = ({ id, patients }: any) => {
-  const [info, setInfo] = useState(Array(patients?.length).fill(false));
-
-  const showInfo = (index: any) => {
-    setInfo((prevInfo) => {
-      const updatedInfo = [...prevInfo];
-      updatedInfo[index] = !updatedInfo[index];
-      return updatedInfo;
-    });
-  };
-
   return (
     <div className="room__container">
       <div className="lol">
-        <div>Room Number:{id}</div>
+        <div>Room Number: {id}</div>
         <div>Edit room</div>
       </div>
       <div className="room">
-        {patients?.map((e: any, index: any) => (
+        {patients?.map((patient: any, index: any) => (
           <div className="room-info" key={index}>
             <div>
-              <img
-                className="room__bed-svg"
-                src={bed}
-                onClick={() => showInfo(index)}
-              />
+              <img className="room__bed-svg" src={bed} />
             </div>
-            <div>{e.name}</div>
-            {info[index] && (
-              <div>
-                <PatientInfoModal {...e} />
-              </div>
-            )}
+            <div>{patient.name}</div>
+            <div>
+              <PatientInfoModal {...patient} />
+            </div>
           </div>
         ))}
       </div>
