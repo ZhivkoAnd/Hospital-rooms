@@ -21,13 +21,17 @@ const RoomGrid = () => {
   // The map() function is used to iterate over the data array.
   // Within each iteration, the filter() function is used to keep only the patients whose names include the inputQuery.
   //  The flat() function is then used to flatten the resulting array of arrays into a single array of filtered values.
-  const inputData = data
-    ?.map((e: any) =>
-      e.patients.filter((patient: any) =>
-        patient.name.toLowerCase().includes(inputQuery.toLowerCase())
-      )
-    )
-    .flat();
+  const inputData = /^[a-zA-Z]+$/.test(inputQuery)
+    ? data
+        ?.map((e: any) =>
+          e.patients.filter((patient: any) =>
+            patient.name.toLowerCase().includes(inputQuery.toLowerCase())
+          )
+        )
+        .flat()
+    : /^\d+$/.test(inputQuery)
+    ? data?.filter((patient: any) => patient.id === parseInt(inputQuery))
+    : "";
 
   useEffect(() => {
     if (inputData && inputData.length && inputQuery) {
