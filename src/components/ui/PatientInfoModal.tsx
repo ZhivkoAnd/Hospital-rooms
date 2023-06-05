@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { FcInfo } from "react-icons/fc";
 
 const style = {
   position: "absolute" as "absolute",
@@ -25,7 +26,7 @@ export default function TransitionsModal({ id, name, diseases }: any) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <FcInfo onClick={handleOpen} />
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
