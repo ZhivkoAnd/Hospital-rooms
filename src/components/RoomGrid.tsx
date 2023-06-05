@@ -45,11 +45,10 @@ const RoomGrid = () => {
   if (isLoading) {
     return <LoadingSpinners magnifying_glass />;
   }
+
   if (isError) {
     return <ErrorUI />;
   }
-
-  console.log(rooms);
 
   return (
     <>
@@ -57,9 +56,10 @@ const RoomGrid = () => {
       <div className="rooms">
         {/* If there as something written in the input, show only the names, otherwise show the rooms */}
 
-        {inputQuery && /^[a-zA-Z]+$/.test(inputQuery) && (
+        {inputQuery && inputData.length && /^[a-zA-Z]+$/.test(inputQuery) && (
           <AdminProductList data={rooms} />
         )}
+
         {inputQuery &&
           /^\d+$/.test(inputQuery) &&
           inputData.map((patient: any) => (
@@ -67,6 +67,7 @@ const RoomGrid = () => {
               <Room {...patient} />
             </div>
           ))}
+
         {!inputQuery &&
           rooms?.map((patient: any) => (
             <div key={patient.id}>
