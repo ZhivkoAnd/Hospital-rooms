@@ -63,11 +63,9 @@ const RoomGrid = () => {
             </div>
           )
         )}
-        {/^\d+$/.test(inputQuery) ? (
-          <Room id={inputData.map((e: any) => e.id)} />
-        ) : (
-          ""
-        )}
+        {/^\d+$/.test(inputQuery)
+          ? inputData.map((e: any) => <Room id={e.id} patients={e.patients} />)
+          : ""}
       </div>
     </>
   );
