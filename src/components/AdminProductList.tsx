@@ -46,11 +46,12 @@ const AdminProductList = ({ data }: any) => {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell align="center">Product ID</StyledTableCell>
-            <StyledTableCell>Product</StyledTableCell>
+            <StyledTableCell align="center">Patient ID</StyledTableCell>
+            <StyledTableCell>Name</StyledTableCell>
+            <StyledTableCell align="left">Picture</StyledTableCell>
             <StyledTableCell align="center">Information</StyledTableCell>
-            <StyledTableCell align="center">Update Product</StyledTableCell>
-            <StyledTableCell align="center">Delete Product</StyledTableCell>
+            <StyledTableCell align="center">Update Info</StyledTableCell>
+            <StyledTableCell align="center">Delete Patient</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -60,7 +61,12 @@ const AdminProductList = ({ data }: any) => {
               <StyledTableCell component="th" scope="row">
                 {patient.name}
               </StyledTableCell>
-
+              <StyledTableCell align="left">
+                <img
+                  src={patient.image}
+                  style={{ width: "80px", height: "80px" }}
+                />
+              </StyledTableCell>
               <StyledTableCell align="center">
                 {patient.diseases?.map((info: any) => info)}
               </StyledTableCell>
