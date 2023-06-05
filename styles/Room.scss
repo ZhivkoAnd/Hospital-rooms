@@ -9,8 +9,15 @@
     gap: 1rem;
   }
 
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   &__bed-svg {
-    width: 4rem;
+    width: 3rem;
   }
 }
 

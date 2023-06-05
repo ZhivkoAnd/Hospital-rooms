@@ -40,6 +40,7 @@ interface AdminProductList {
 }
 
 const AdminProductList = ({ data }: any) => {
+  console.log(data);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -47,33 +48,29 @@ const AdminProductList = ({ data }: any) => {
           <TableRow>
             <StyledTableCell align="center">Product ID</StyledTableCell>
             <StyledTableCell>Product</StyledTableCell>
-            <StyledTableCell align="left">Image</StyledTableCell>
-            <StyledTableCell align="center">Price</StyledTableCell>
+            <StyledTableCell align="center">Information</StyledTableCell>
             <StyledTableCell align="center">Update Product</StyledTableCell>
             <StyledTableCell align="center">Delete Product</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data?.map((row: any) => (
-            <StyledTableRow key={row.id}>
-              <StyledTableCell align="center">{row.id}</StyledTableCell>
+          {data?.map((patient: any) => (
+            <StyledTableRow key={patient.id}>
+              <StyledTableCell align="center">{patient.id}</StyledTableCell>
               <StyledTableCell component="th" scope="row">
-                {row.title}
+                {patient.name}
               </StyledTableCell>
-              <StyledTableCell align="left">
-                <img
-                  src={row.image}
-                  style={{ width: "80px", height: "80px" }}
-                />
+
+              <StyledTableCell align="center">
+                {patient.diseases?.map((info: any) => info)}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.price}</StyledTableCell>
               <StyledTableCell align="center">
                 <Button
                   variant="contained"
                   color="info"
                   startIcon={<UpgradeIcon />}
                   component={Link}
-                  to={`/update-product/${row.id}`}
+                  to={`/update-product/${patient.id}`}
                 ></Button>
               </StyledTableCell>
               <StyledTableCell align="center">
