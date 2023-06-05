@@ -1,7 +1,6 @@
 .room {
   width: 10rem;
   height: 10rem;
-  background-color: gray;
 
   &__container {
     display: flex;
@@ -14,6 +13,16 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  &__variant-one {
+    background-color: blue;
+  }
+  &__variant-two {
+    background-color: green;
+  }
+  &__variant-three {
+    background-color: red;
   }
 
   &__bed-svg {

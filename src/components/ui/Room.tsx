@@ -8,7 +8,15 @@ const Room = ({ id, patients }: any) => {
         <div>Room Number: {id}</div>
         <div>Edit room</div>
       </div>
-      <div className="room">
+      <div
+        className={`room ${
+          patients.length === 1
+            ? "room__variant-one"
+            : patients.length === 2
+            ? "room__variant-two"
+            : "room__variant-three"
+        }`}
+      >
         {patients?.map((patient: any, index: any) => (
           <div className="room__info" key={index}>
             <div>
