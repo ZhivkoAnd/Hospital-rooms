@@ -48,6 +48,7 @@ const RoomGrid = () => {
     return <ErrorUI />;
   }
 
+  console.log(inputData);
   return (
     <>
       <ActionBar inputQuery={inputQuery} setInputQuery={setInputQuery} />
@@ -61,6 +62,11 @@ const RoomGrid = () => {
               <Room {...patient} />
             </div>
           )
+        )}
+        {/^\d+$/.test(inputQuery) ? (
+          <Room id={inputData.map((e: any) => e.id)} />
+        ) : (
+          ""
         )}
       </div>
     </>
