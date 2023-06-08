@@ -12,18 +12,18 @@ const RoomGrid = () => {
 
   const { data, isLoading, isError } = useQuery(["rooms"], fetchRooms, {
     onSuccess(data) {
-      setRooms(data);
+      setRooms(data.rooms);
     },
     refetchOnWindowFocus: false,
   });
 
-  const [rooms, setRooms] = useState(data?.room);
+  const [rooms, setRooms] = useState(data?.rooms);
 
   // The map() function is used to iterate over the data array.
   // Within each iteration, the filter() function is used to keep only the patients whose names include the inputQuery.
   //  The flat() function is then used to flatten the resulting array of arrays into a single array of filtered values.
   const inputData = /^[a-zA-Z]+$/.test(inputQuery)
-    ? data?.room
+    ? data?.rooms
         .map((e: any) =>
           e.patients.filter((patient: any) =>
             patient.name.toLowerCase().includes(inputQuery.toLowerCase())
@@ -31,14 +31,14 @@ const RoomGrid = () => {
         )
         .flat()
     : /^\d+$/.test(inputQuery)
-    ? data?.room.filter((patient: any) => patient.id === parseInt(inputQuery))
+    ? data?.rooms.filter((patient: any) => patient.id === inputQuery)
     : "";
 
   useEffect(() => {
     if (inputData && inputData.length && inputQuery) {
       setRooms(inputData);
     } else {
-      setRooms(data?.room);
+      setRooms(data?.rooms);
     }
   }, [inputQuery, data]);
 
