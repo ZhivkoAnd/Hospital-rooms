@@ -17,7 +17,7 @@ const RoomGrid = () => {
     refetchOnWindowFocus: false,
   });
 
-  const [rooms, setRooms] = useState(data);
+  const [rooms, setRooms] = useState(data?.room);
 
   // The map() function is used to iterate over the data array.
   // Within each iteration, the filter() function is used to keep only the patients whose names include the inputQuery.
@@ -38,7 +38,7 @@ const RoomGrid = () => {
     if (inputData && inputData.length && inputQuery) {
       setRooms(inputData);
     } else {
-      setRooms(data);
+      setRooms(data?.room);
     }
   }, [inputQuery, data]);
 
