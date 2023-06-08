@@ -19,7 +19,15 @@ const style = {
   p: 4,
 };
 
-export default function TransitionsModal({ id, name, diseases }: any) {
+export default function TransitionsModal({
+  id,
+  name,
+  consultations,
+  date,
+  medicine,
+  notes,
+  research,
+}: any) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -46,7 +54,11 @@ export default function TransitionsModal({ id, name, diseases }: any) {
               {id}: {name}
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              {diseases?.map((e: any) => e)}
+              <div>{consultations}</div>
+              <div>{date}</div>
+              <div>{medicine}</div>
+              <div>{notes}</div>
+              <div>{research}</div>
             </Typography>
           </Box>
         </Fade>
