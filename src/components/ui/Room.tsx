@@ -4,9 +4,9 @@ import PatientInfoModal from "./PatientInfoModal";
 const Room = ({ id, patients }: any) => {
   return (
     <div className="room__container">
-      <div className="lol">
-        <div>Room Number: {id}</div>
-        <div>Edit room</div>
+      <div className="room__info">
+        <div>Room {id}</div>
+        <div>Edit</div>
       </div>
       <div
         className={`room ${
@@ -18,7 +18,7 @@ const Room = ({ id, patients }: any) => {
         }`}
       >
         {patients?.map((patient: any, index: any) => (
-          <div className="room__info" key={index}>
+          <div className="room__content" key={index}>
             <div>
               <img className="room__bed-svg" src={bed} />
             </div>
