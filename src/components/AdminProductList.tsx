@@ -48,8 +48,7 @@ const AdminProductList = ({ data }: any) => {
           <TableRow>
             <StyledTableCell align="center">Patient ID</StyledTableCell>
             <StyledTableCell>Name</StyledTableCell>
-            <StyledTableCell align="left">Picture</StyledTableCell>
-            <StyledTableCell align="center">Information</StyledTableCell>
+            <StyledTableCell align="center">Last changed on</StyledTableCell>
             <StyledTableCell align="center">Update Info</StyledTableCell>
             <StyledTableCell align="center">Delete Patient</StyledTableCell>
           </TableRow>
@@ -61,15 +60,7 @@ const AdminProductList = ({ data }: any) => {
               <StyledTableCell component="th" scope="row">
                 {patient.name}
               </StyledTableCell>
-              <StyledTableCell align="left">
-                <img
-                  src={patient.image}
-                  style={{ width: "80px", height: "80px" }}
-                />
-              </StyledTableCell>
-              <StyledTableCell align="center">
-                {patient.diseases?.map((info: any) => info)}
-              </StyledTableCell>
+              <StyledTableCell align="center">{patient.date}</StyledTableCell>
               <StyledTableCell align="center">
                 <Button
                   variant="contained"
@@ -77,14 +68,18 @@ const AdminProductList = ({ data }: any) => {
                   startIcon={<UpgradeIcon />}
                   component={Link}
                   to={`/update-product/${patient.id}`}
-                ></Button>
+                >
+                  Update
+                </Button>
               </StyledTableCell>
               <StyledTableCell align="center">
                 <Button
                   variant="contained"
                   color="error"
                   startIcon={<DeleteIcon />}
-                ></Button>
+                >
+                  Delete
+                </Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}
