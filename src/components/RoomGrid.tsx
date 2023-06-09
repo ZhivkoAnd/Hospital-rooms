@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import LoadingSpinners from "./ui/LoadingSpinners";
 import ErrorUI from "./ui/ErrorUI";
 import ActionBar from "./ui/ActionBar";
-import AdminProductList from "./AdminProductList";
+import PatientsList from "./PatientsList";
 
 const RoomGrid = () => {
   const [inputQuery, setInputQuery] = useState("");
@@ -57,7 +57,7 @@ const RoomGrid = () => {
         {/* If there as something written in the input, show only the names, otherwise show the rooms */}
 
         {inputQuery && inputData.length && /^[a-zA-Z]+$/.test(inputQuery) && (
-          <AdminProductList data={rooms} />
+          <PatientsList data={rooms} />
         )}
 
         {inputQuery &&

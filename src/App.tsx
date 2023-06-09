@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Global.scss";
 import "../styles/Navigation.scss";
-import "../styles/VacationPanel.scss";
 import "../styles/ActionBar.scss";
 import "../styles/ErrorUI.scss";
 import "../styles/Footer.scss";

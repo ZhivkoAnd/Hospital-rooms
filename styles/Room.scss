@@ -75,3 +75,10 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+@media (max-width: 768px) {
+  .rooms {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+}
