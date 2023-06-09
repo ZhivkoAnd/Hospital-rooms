@@ -35,13 +35,7 @@ export const fetchRooms = async () => {
 // };
 
 // Delete Data
-export const deleteData = async ({
-  roomId,
-  patientId,
-}: {
-  roomId: any;
-  patientId: any;
-}) => {
+export const deleteData = async ({ roomId, patientId }: any) => {
   const response = await fetch(
     `${
       import.meta.env.VITE_API_KEY
