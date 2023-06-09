@@ -46,8 +46,8 @@ export default function TransitionsModal({ id, patients }: any) {
       },
     });
 
-  const remove = async (id: any) => {
-    await deleteMutate(id);
+  const remove = async (roomId: any, patientId: any) => {
+    await deleteMutate({ roomId, patientId });
   };
 
   const [open, setOpen] = React.useState(false);
@@ -95,7 +95,7 @@ export default function TransitionsModal({ id, patients }: any) {
                       variant="contained"
                       color="error"
                       startIcon={<DeleteIcon />}
-                      onClick={() => remove(e.id)}
+                      onClick={() => remove(id, e.id)}
                     >
                       Delete
                     </Button>

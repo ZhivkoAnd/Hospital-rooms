@@ -35,9 +35,17 @@ export const fetchRooms = async () => {
 // };
 
 // Delete Data
-export const deleteData = async (id: any) => {
+export const deleteData = async ({
+  roomId,
+  patientId,
+}: {
+  roomId: any;
+  patientId: any;
+}) => {
   const response = await fetch(
-    `${import.meta.env.VITE_API_KEY}/urology/room/id/${id}`,
+    `${
+      import.meta.env.VITE_API_KEY
+    }/urology/room/${roomId}/patient/${patientId}`,
     {
       method: "DELETE",
     }
