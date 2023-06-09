@@ -16,15 +16,39 @@
     padding: 0.5rem;
   }
 
+  &__info-number {
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+
   &__info-edit {
     text-decoration: underline;
+    letter-spacing: 0.05rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   &__content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  &__content-info-icon {
+    font-size: 1.4rem;
+  }
+
+  &__content-name {
+    color: black;
+    letter-spacing: 0.03rem;
+    font-size: 1.1rem;
   }
 
   &__variant-one {

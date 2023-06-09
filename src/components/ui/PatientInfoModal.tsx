@@ -34,7 +34,7 @@ export default function TransitionsModal({
 
   return (
     <div>
-      <FcInfo onClick={handleOpen} />
+      <FcInfo onClick={handleOpen} className="room__content-info-icon"/>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

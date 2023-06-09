@@ -22,7 +22,7 @@ const Room = ({ id, patients }: any) => {
             <div>
               <img className="room__bed-svg" src={bed} />
             </div>
-            <div>{patient.name}</div>
+            <div className="room__content-name">{patient.name}</div>
             <div>
               <PatientInfoModal {...patient} />
             </div>
