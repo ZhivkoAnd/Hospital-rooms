@@ -1,6 +1,10 @@
 .room {
   width: 10rem;
   height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   &__container {
     display: flex;
