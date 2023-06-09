@@ -1,12 +1,13 @@
 import bed from "../../assets/bed.svg";
 import PatientInfoModal from "./PatientInfoModal";
+import RoomInfoModal from "./RoomInfoModal";
 
 const Room = ({ id, patients }: any) => {
   return (
     <div className="room__container">
       <div className="room__info">
         <div className="room__info-number">Room {id}</div>
-        <div className="room__info-edit">Edit</div>
+        <RoomInfoModal id={id} patients={patients} />
       </div>
       <div
         className={`room ${
