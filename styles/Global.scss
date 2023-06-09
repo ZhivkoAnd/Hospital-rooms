@@ -46,15 +46,23 @@
   --cyan: var(--cyan-light);
 }
 
+@font-face {
+  font-family: "Brandon Grotesque Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("../src/assets/fonts/Brandon_reg.woff2"),
+    url("../src/assets/fonts/Brandon_reg.woff2") format("woff2");
+  font-display: swap;
+}
+
 .App {
   text-align: center;
   font-size: 16px;
   background-color: var(--background);
   color: var(--text);
-  font-family: "Quicksand", sans-serif;
+  font-family: "Brandon Grotesque Regular", sans-serif;
   overflow: hidden;
   transition: background 500ms ease-in-out, color 500ms ease-in-out;
-  font-family: "Lato", sans-serif !important;
 }
 
 body {

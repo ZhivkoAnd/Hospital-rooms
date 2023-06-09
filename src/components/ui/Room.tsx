@@ -5,8 +5,8 @@ const Room = ({ id, patients }: any) => {
   return (
     <div className="room__container">
       <div className="room__info">
-        <div>Room {id}</div>
-        <div>Edit</div>
+        <div className="room__info-number">Room {id}</div>
+        <div className="room__info-edit">Edit</div>
       </div>
       <div
         className={`room ${

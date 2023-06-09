@@ -5,13 +5,19 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    background-color: gray;
+    background-color: #990000;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
   }
 
   &__info {
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  &__info-edit {
+    text-decoration: underline;
   }
 
   &__content {
@@ -28,7 +34,7 @@
     background-color: green;
   }
   &__variant-three {
-    background-color: red;
+    background-color: #f2f2f2;
   }
 
   &__bed-svg {
