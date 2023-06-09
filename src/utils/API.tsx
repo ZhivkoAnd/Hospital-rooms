@@ -34,16 +34,19 @@ export const fetchRooms = async () => {
 //   return response.json();
 // };
 
-// // Delete Data
-// export const deleteData = async (id: number) => {
-//   const response = await fetch(`${import.meta.env.VITE_API_KEY}/cities/${id}`, {
-//     method: "DELETE",
-//   });
-//   if (!response.ok) {
-//     throw new Error();
-//   }
-//   return true;
-// };
+// Delete Data
+export const deleteData = async (id: any) => {
+  const response = await fetch(
+    `${import.meta.env.VITE_API_KEY}/urology/room/id/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
+  if (!response.ok) {
+    throw new Error();
+  }
+  return true;
+};
 
 // // Create Data
 // export const createData = async (data: {}) => {

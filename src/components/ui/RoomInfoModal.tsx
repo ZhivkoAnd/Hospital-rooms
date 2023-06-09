@@ -10,6 +10,9 @@ import UpgradeIcon from "@mui/icons-material/Upgrade";
 import { Link } from "react-router-dom";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import { styled } from "@mui/material/styles";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+
+import { deleteData } from "../../utils/API";
 
 const style = {
   position: "absolute" as "absolute",
@@ -34,6 +37,19 @@ const StyledTableCell: any = styled(TableCell)(({ theme }: any) => ({
 }));
 
 export default function TransitionsModal({ id, patients }: any) {
+  const queryClient = useQueryClient();
+
+  const { mutateAsync: deleteMutate, isLoading: isLoadingDeletedElement } =
+    useMutation(deleteData, {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["rooms"]);
+      },
+    });
+
+  const remove = async (id: any) => {
+    await deleteMutate(id);
+  };
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -79,6 +95,7 @@ export default function TransitionsModal({ id, patients }: any) {
                       variant="contained"
                       color="error"
                       startIcon={<DeleteIcon />}
+                      onClick={() => remove(e.id)}
                     >
                       Delete
                     </Button>
