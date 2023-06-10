@@ -4,7 +4,7 @@ import RoomInfoModal from "./RoomInfoModal";
 import { RiHotelBedFill } from "react-icons/ri";
 import { RiHotelBedLine } from "react-icons/ri";
 
-const Room = ({ id, patients }: any) => {
+const Room = ({ id, beds, patients }: any) => {
   return (
     <div className="room__container">
       <div className="room__info">
@@ -31,6 +31,18 @@ const Room = ({ id, patients }: any) => {
             </div>
           </div>
         ))}
+        {/* The expression [...Array(3 - patients.length)] creates an array with a
+        length equal to the number of empty spaces. Then, the .map() function is
+        used to iterate over this array and generate the empty bed icons. Each
+        empty bed icon is assigned a unique key prop. */}
+        <div className="room__content-empty-beds">
+          {[...Array(3 - patients.length)].map((_, index) => (
+            <RiHotelBedLine
+              key={index}
+              className="room__content-bed-icon-empty"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

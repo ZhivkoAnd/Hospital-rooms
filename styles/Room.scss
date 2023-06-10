@@ -51,8 +51,21 @@
     font-size: 2rem;
   }
 
+  &__content-bed-icon-empty {
+    color: white;
+    font-size: 2rem;
+  }
+
   &__content-info-icon {
     font-size: 1.4rem;
+  }
+
+  &__content-empty-beds {
+    display: flex;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    flex-direction: column;
   }
 
   &__content-name {
