@@ -5,6 +5,20 @@ import { RiHotelBedFill } from "react-icons/ri";
 import { RiHotelBedLine } from "react-icons/ri";
 
 const Room = ({ id, beds, patients }: any) => {
+  // const Room = ({ id, beds, patients }: any) => {
+  // const emptyBeds = () => {
+  //   const emptySpaces = 3 - patients.length; // Calculate the number of empty spaces
+
+  //   const emptyBedsArray = [];
+  //   for (let i = 0; i < emptySpaces; i++) {
+  //     emptyBedsArray.push(
+  //       <RiHotelBedLine key={i} className="room__content-bed-icon-empty" />
+  //     );
+  //   }
+
+  //   return emptyBedsArray;
+  // };
+
   return (
     <div className="room__container">
       <div className="room__info">
