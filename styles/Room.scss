@@ -2,9 +2,10 @@
   width: 10rem;
   height: 10rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   &__container {
     display: flex;
@@ -43,6 +44,11 @@
     gap: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  &__content-bed-icon-full {
+    color: black;
+    font-size: 2rem;
   }
 
   &__content-info-icon {

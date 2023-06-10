@@ -1,6 +1,8 @@
-import bed from "../../assets/bed.svg";
+import bed from "../../assets/empty-bed.svg";
 import PatientInfoModal from "./PatientInfoModal";
 import RoomInfoModal from "./RoomInfoModal";
+import { RiHotelBedFill } from "react-icons/ri";
+import { RiHotelBedLine } from "react-icons/ri";
 
 const Room = ({ id, patients }: any) => {
   return (
@@ -21,7 +23,7 @@ const Room = ({ id, patients }: any) => {
         {patients?.map((patient: any, index: any) => (
           <div className="room__content" key={index}>
             <div>
-              <img className="room__bed-svg" src={bed} />
+              <RiHotelBedFill className="room__content-bed-icon-full" />
             </div>
             <div className="room__content-name">{patient.name}</div>
             <div>
